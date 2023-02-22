@@ -39,8 +39,6 @@ class NeuralNetwork(nn.Module):
         logits = self.linear_relu_stack(x)
         return logits
 
-#############################
-
 def get_lossfn_and_optimizer(mymodel):
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(mymodel.parameters(), lr=1e-3)
@@ -67,8 +65,6 @@ def load_data():
     
     return training_data, test_data
 
-#############################
-
 def create_dataloaders(training_data, test_data, batch_size=64):
 
     # Create data loaders.
@@ -81,8 +77,6 @@ def create_dataloaders(training_data, test_data, batch_size=64):
         break
         
     return train_dataloader, test_dataloader
-  
-#############################
 
 def get_model():
     
